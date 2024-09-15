@@ -13,8 +13,8 @@ public class JavaBeansAndBytes {
     boolean isOpen;
     int yearFounded;
 
-    CoffeeDrink latte;
-    CoffeeDrink mocha;
+    CoffeeDrink order1;
+    CoffeeDrink order2;
 
     public static void main(String[] args) {
         // Create a new CoffeeShop instance to run everything.
@@ -49,19 +49,24 @@ public class JavaBeansAndBytes {
         countCups();
         baristasChoice();
 
-
         // TODO
         /** Create two CoffeeDrink objects**/
 
-        latte = new CoffeeDrink(1, "milk", false);
-        mocha = new CoffeeDrink(2,"chocolate", true);
+        order1 = new CoffeeDrink(1, "vanilla", false);
+        order2 = new CoffeeDrink(2,"chocolate", true);
+
+        order2.setFlavor("caramel");
+        order2.setNumberOfCups(3);
+        order2.setHasWhippedCream(false);
 
         // TODO
         /** Print out the order details**/
 
-        latte.printInfo();
-        mocha.printInfo();
+        order1.printInfo();
+        order2.printInfo();
+        specialOfTheDay(order2.getFlavor());
 
+        System.out.println("Order 2: "+order2.getFlavor()+", "+order2.getNumberOfCups()+" cups, and it is "+order2.getHasWhippedCream()+" that it has whipped cream");
     }
 
     // Method to generate a random discount
